@@ -1,38 +1,18 @@
-var express = require('express');
-var fs = require('fs');
 var request = require('request');
+var rp = require('request-promise');
 var cheerio = require('cheerio');
-var app     = express();
 
-app.get('/scrape', function(req, res){
+var options = {
+  uri: 'https://www.walgreens.com/storelocator/find.jsp',
+  transform: function (body) {
+    return cheerio.load(body);
+  }
+};
 
-  url = 'https://www.walgreens.com/storelocator/find.jsp'
-
-  request(url, function(error, response, html){
-
-    if(!error){
-
-      var $ = cheerio.load(html);
-
-      var name, streetAddress, city, state, zip, hours
-      var json = {name: "Walgreens", streetAddress: "", city: "", state: "", zip: "78756", hours: ""};
-
-      //find unique identifiers
-      $('.mb0 p0').filter(function(){
-        var data =$(this);
-        console.log(this);
-      })
-      //set json object to equal result from unique identifiers
-    }
-
-    //use fs library to create json
-
-  })
-
+rp(options)
+.then(($) => {
+  console.log($);
 })
-
-app.listen('3000')
-
-console.log('Magic happens on port 3000');
-
-exports = module.exports = app;
+.catch((err)=>{
+  console.log(err);
+});
