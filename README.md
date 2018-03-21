@@ -1,2 +1,2 @@
 # scraperChallenge
-Web scraper for Walgreens in zip code 78756
+Web scraper for CVS in zip code 78756
