@@ -1,0 +1,24 @@
+{
+  "name": "scraperchallenge",
+  "version": "1.0.0",
+  "description": "web scraper",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstriker84/scraperChallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jstriker84/scraperChallenge/issues"
+  },
+  "homepage": "https://github.com/jstriker84/scraperChallenge#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "request": "^2.85.0"
+  }
+}
